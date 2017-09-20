@@ -59,5 +59,34 @@ echo "<br>";
 echo $y;
 ?>
 
+<!--static作用域-->
+<?php
+//当一个函数完成时，它的所有变量通常都会被删除。然而，有时候您希望某个局部变量不要被删除。
+//要做到这一点，请在您第一次声明变量时使用 static 关键字
+function myTest4() {
+    static  $x=0;
+    echo $x;
+    $x++;
+}
+echo "<br>";
+myTest4();
+echo "<br>";
+myTest4();
+echo "<br>";
+myTest4();
+
+?>
+
+<!--参数作用域-->
+<?php
+    function myTest5($x) {
+        echo $x;
+    }
+
+    echo "<br>";
+
+    myTest5(6);
+?>
+
 </body>
 </html>
